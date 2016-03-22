@@ -6,12 +6,9 @@ export default class Lightbulb {
   }
 
   flip() {
-    if (this.on) {
-      this.on = false;
-      return `on`;
-    }
+    // Switch from true to false or false to true
+    this.on = !this.on;
 
-    this.on = true;
-    return `off`;
+    return this.on;
   }
 }

@@ -12,6 +12,10 @@
   <script src="/app.js" charset="utf-8"></script>
 
   <script type="text/javascript">
+    var body = document.querySelector(`body`);
+    var LightbulbView = require(`04-lightbulb-view`);
+    var red = new LightbulbView(`red`);
+    body.appendChild(red.el);
   </script>
 </body>
 </html>
