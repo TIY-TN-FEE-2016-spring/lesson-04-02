@@ -14,8 +14,25 @@
   <script type="text/javascript">
     var body = document.querySelector(`body`);
     var LightbulbView = require(`04-lightbulb-view`);
-    var red = new LightbulbView(`red`);
-    body.appendChild(red.el);
+    var colors = require(`05-colors`);
+
+    // Filter down to the
+    colors.reduce((goodColors, current) => {
+      // Check if color is an actual color
+      //   The length is 7 AND the first letter is "#"
+      if (current.length === 7 && current[0] === `#`) {
+        // Push to the goodColors array
+        goodColors.push(current);
+      }
+
+      return goodColors;
+    }, []).forEach((color) => {
+      // Create a new LightbulbView for ever color
+      var red = new LightbulbView(color);
+
+      // Add the LightbulbView to the DOM
+      body.appendChild(red.el);
+    });
   </script>
 </body>
 </html>
